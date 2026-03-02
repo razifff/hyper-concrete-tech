@@ -81,10 +81,7 @@ export default function Home() {
       <nav className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
         <div className="container flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">H</span>
-            </div>
-            <span className="font-bold text-lg text-foreground">Hyper Concrete</span>
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/logo_fe4ed37f.jpg" alt="Hyper Concrete Tech Logo" className="h-12" />
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">About</a>
@@ -141,8 +138,8 @@ export default function Home() {
             {/* Right: Image */}
             <div className="relative h-96 md:h-full rounded-lg overflow-hidden shadow-2xl">
               <img 
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/hero-concrete-plant-8ExWxZEfWQwxvopgYEsf2B.webp"
-                alt="Hyper Concrete Plant"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/Picsart_25-06-30_12-42-13-094_cd8ac962.jpg"
+                alt="Hyper Concrete Tech Fleet"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
