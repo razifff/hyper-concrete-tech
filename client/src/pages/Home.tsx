@@ -169,6 +169,16 @@ export default function Home() {
             </p>
           </div>
 
+          <div className="mb-12">
+            <div className="relative w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-xl" style={{aspectRatio: '16/9'}}>
+              <video 
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/AQMiVEQkyF29xc7kH0aOsVAQe-FPVl15E0ix4DvSyUor-f0J89Gwp8IlC1i3NLPdBduRM1WCjkxOLpLxTHKjyeVr_852d86f6.mp4"
+                controls
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feature, idx) => (
               <Card key={idx} className="p-8 hover:shadow-lg transition-shadow border-l-4 border-l-primary">
@@ -404,12 +414,12 @@ export default function Home() {
               <Card className="p-8 text-center border-t-4 border-t-primary">
                 <Phone className="w-8 h-8 text-primary mx-auto mb-4" />
                 <h3 className="font-bold text-foreground mb-2">Phone</h3>
-                <p className="text-muted-foreground">+60 5-XXX-XXXX</p>
+                <p className="text-muted-foreground">05-777 2169</p>
               </Card>
               <Card className="p-8 text-center border-t-4 border-t-primary">
                 <Mail className="w-8 h-8 text-primary mx-auto mb-4" />
                 <h3 className="font-bold text-foreground mb-2">Email</h3>
-                <p className="text-muted-foreground">info@hyperconcretetech.com</p>
+                <p className="text-muted-foreground">admin@hyperconcretetech.com</p>
               </Card>
               <Card className="p-8 text-center border-t-4 border-t-primary">
                 <MapPin className="w-8 h-8 text-primary mx-auto mb-4" />
