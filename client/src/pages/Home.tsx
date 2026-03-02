@@ -43,6 +43,12 @@ export default function Home() {
 
   const locations = [
     {
+      name: "HCT-01 Plant (Ipoh)",
+      region: "Perak",
+      coverage: "Ipoh, Meru, Chemor, Sungai Siput, Kuala Kangsar, and nearby areas",
+      status: "Operational"
+    },
+    {
       name: "Sungai Siput Plant",
       region: "Perak",
       coverage: "Sungai Siput, Manong, Padang Rengas",
@@ -121,7 +127,7 @@ export default function Home() {
 
               <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border">
                 <div>
-                  <div className="text-2xl font-bold text-primary">2</div>
+                  <div className="text-2xl font-bold text-primary">3</div>
                   <p className="text-sm text-muted-foreground">Plant Locations</p>
                 </div>
                 <div>
