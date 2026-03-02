@@ -95,9 +95,11 @@ export default function Home() {
             <a href="#locations" className="text-sm font-medium hover:text-primary transition-colors">Locations</a>
             <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</a>
           </div>
-          <Button className="bg-primary text-primary-foreground hover:bg-blue-600">
-            Get Quote
-          </Button>
+          <a href="/get-quote">
+            <Button className="bg-primary text-primary-foreground hover:bg-blue-600">
+              Get Quote
+            </Button>
+          </a>
         </div>
       </nav>
 
@@ -117,12 +119,16 @@ export default function Home() {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-blue-600">
-                  Explore Services <ChevronRight className="ml-2 w-4 h-4" />
-                </Button>
-                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5">
-                  Learn More
-                </Button>
+                <a href="#services">
+                  <Button size="lg" className="bg-primary text-primary-foreground hover:bg-blue-600">
+                    Explore Services <ChevronRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </a>
+                <a href="#about">
+                  <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5">
+                    Learn More
+                  </Button>
+                </a>
               </div>
 
               <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border">
@@ -388,13 +394,17 @@ export default function Home() {
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
             Contact us today to discuss your concrete requirements and receive a competitive quote.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-blue-400">
-              Request Quote
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-              Contact Us
-            </Button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/get-quote">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-blue-600">
+                Request Quote
+              </Button>
+            </a>
+            <a href="#contact">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                Contact Us
+              </Button>
+            </a>
           </div>
         </div>
       </section>
