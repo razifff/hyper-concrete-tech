@@ -260,7 +260,7 @@ export default function Home() {
             </div>
             <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/quality-testing-lab-NoEpeAah2iFtfW5LeacaFu.webp"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/Picsart_26-03-03_13-29-20-230_4f6327ce.jpg"
                 alt="Quality Testing Laboratory"
                 className="w-full h-full object-cover"
               />
