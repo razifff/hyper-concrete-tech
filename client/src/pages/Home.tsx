@@ -307,8 +307,8 @@ export default function Home() {
           {/* Delivery Coverage Image */}
           <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
             <img 
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/construction-site-concrete-PctmX3ESNYawLKkZfTJhNY.webp"
-              alt="Construction Site Delivery"
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/1000375591_bf82628e.jpg"
+              alt="Concrete Plant Facility"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
