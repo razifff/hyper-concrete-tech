@@ -309,7 +309,7 @@ export default function Home() {
             <img 
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/1000375591_bf82628e.jpg"
               alt="Concrete Plant Facility"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-bottom"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
           </div>
