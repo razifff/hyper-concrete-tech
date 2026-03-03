@@ -150,8 +150,8 @@ export default function Home() {
             {/* Right: Image */}
             <div className="relative h-96 md:h-full rounded-lg overflow-hidden shadow-2xl">
               <img 
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/Picsart_25-06-30_12-42-13-094_cd8ac962.jpg"
-                alt="Hyper Concrete Tech Fleet"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/1000375585_d28a1586.png"
+                alt="Hyper Concrete Tech Fleet and Plant"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
