@@ -409,7 +409,7 @@ export default function Home() {
                 <p className="text-sm text-muted-foreground">Kuala Kangsar, Perak</p>
               </div>
               <MapView 
-                initialCenter={{ lat: 4.7629, lng: 101.5241 }}
+                initialCenter={{ lat: 4.7649, lng: 101.5204 }}
                 initialZoom={14}
               />
             </div>
@@ -421,7 +421,7 @@ export default function Home() {
                 <p className="text-sm text-muted-foreground">Sungai Siput, Perak</p>
               </div>
               <MapView 
-                initialCenter={{ lat: 4.1667, lng: 101.5000 }}
+                initialCenter={{ lat: 4.7831939, lng: 101.1079234 }}
                 initialZoom={14}
               />
             </div>
@@ -430,12 +430,12 @@ export default function Home() {
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                title: "Kuala Kangsar Plant",
+                title: "HCT-01 Plant (Kuala Kangsar)",
                 coverage: "Kuala Kangsar, Lenggong, surrounding areas",
                 contact: "Phone: +60 17-518 3668"
               },
               {
-                title: "Sungai Siput Plant",
+                title: "HCT-02 Plant (Sungai Siput)",
                 coverage: "Sungai Siput, Manong, Padang Rengas",
                 contact: "Phone: +60 11-1119 2359"
               },
