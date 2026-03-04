@@ -19,7 +19,7 @@ export default function GetQuote() {
     customerEmail: "",
     customerPhone: "",
     companyName: "",
-    selectedPlant: "HCT-01 Ipoh",
+    selectedPlant: "HCT-01 Kuala Kangsar",
     concreteType: "Standard Concrete",
     quantity: "",
     projectType: "Building Construction",
@@ -237,9 +237,8 @@ export default function GetQuote() {
                         disabled={isSubmitting}
                         className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground disabled:bg-gray-100 disabled:cursor-not-allowed"
                       >
-                        <option value="HCT-01 Ipoh">HCT-01 Plant (Ipoh)</option>
-                        <option value="HCT-02 Sungai Siput">HCT-02 Plant (Sungai Siput)</option>
                         <option value="HCT-01 Kuala Kangsar">HCT-01 Plant (Kuala Kangsar)</option>
+                        <option value="HCT-02 Sungai Siput">HCT-02 Plant (Sungai Siput)</option>
                       </select>
                     </div>
                     <div>

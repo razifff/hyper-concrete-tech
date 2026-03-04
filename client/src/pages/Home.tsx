@@ -50,21 +50,15 @@ export default function Home() {
 
   const locations = [
     {
-      name: "HCT-01 Plant (Ipoh)",
+      name: "HCT-01 Plant (Kuala Kangsar)",
       region: "Perak",
-      coverage: "Ipoh, Meru, Chemor, Sungai Siput, Kuala Kangsar, and nearby areas",
+      coverage: "Kuala Kangsar, Ipoh, Meru, Chemor, Sungai Siput, Lenggong, and nearby areas",
       status: "Operational"
     },
     {
-      name: "Sungai Siput Plant",
+      name: "HCT-02 Plant (Sungai Siput)",
       region: "Perak",
       coverage: "Sungai Siput, Manong, Padang Rengas",
-      status: "Operational"
-    },
-    {
-      name: "Kuala Kangsar Plant",
-      region: "Perak",
-      coverage: "Kuala Kangsar, Lenggong, surrounding areas",
       status: "Operational"
     }
   ];
@@ -140,7 +134,7 @@ export default function Home() {
 
               <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
                 <div>
-                  <div className="text-2xl font-bold text-primary">3</div>
+                  <div className="text-2xl font-bold text-primary">2</div>
                   <p className="text-sm text-muted-foreground">Plant Locations</p>
                 </div>
                 <div>
@@ -433,22 +427,17 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
                 title: "HCT-01 Plant (Kuala Kangsar)",
-                coverage: "Kuala Kangsar, Lenggong, surrounding areas",
+                coverage: "Kuala Kangsar, Ipoh, Meru, Chemor, Lenggong, and nearby areas",
                 contact: "Phone: +60 17-518 3668"
               },
               {
                 title: "HCT-02 Plant (Sungai Siput)",
                 coverage: "Sungai Siput, Manong, Padang Rengas",
                 contact: "Phone: +60 11-1119 2359"
-              },
-              {
-                title: "HCT-01 Plant (Ipoh)",
-                coverage: "Ipoh, Meru, Chemor, and nearby areas",
-                contact: "Phone: 05-777 2169"
               }
             ].map((plant, idx) => (
               <Card key={idx} className="p-6 border-l-4 border-l-primary">

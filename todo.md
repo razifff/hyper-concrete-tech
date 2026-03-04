@@ -75,3 +75,9 @@
 
 - [x] Fix HCT-01 plant location coordinates on map (updated to correct coordinates: 4.7993784, 100.8953087)
 - [x] Increase header size (logo from h-12 to h-16, nav text from text-sm to text-base, button size-lg, header height h-20)
+
+- [x] Remove HCT-01 Plant (Ipoh) from website - keep only 2 locations (HCT-01 Kuala Kangsar, HCT-02 Sungai Siput)
+- [x] Update hero section plant count from 3 to 2
+- [x] Update locations array to remove Ipoh plant
+- [x] Update plant info cards to show only 2 plants
+- [x] Update Get Quote form plant options to remove Ipoh
