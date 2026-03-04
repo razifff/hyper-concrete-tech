@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ChevronRight, Truck, Zap, Shield, Award, MapPin, Phone, Mail } from "lucide-react";
 import { useState } from "react";
+import { MapView } from "@/components/Map";
 
 /**
  * Design System: Industrial Minimalism
@@ -386,6 +387,72 @@ export default function Home() {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive Map Section */}
+      <section className="py-20 md:py-32 bg-gray-50">
+        <div className="container">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-foreground">Our Plant Locations</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Visit our strategically located plants across Perak for reliable, fresh concrete delivery.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Kuala Kangsar Map */}
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <div className="bg-white p-4 border-b">
+                <h3 className="font-bold text-foreground mb-2">Kuala Kangsar Plant</h3>
+                <p className="text-sm text-muted-foreground">Kuala Kangsar, Perak</p>
+              </div>
+              <MapView 
+                initialCenter={{ lat: 4.7629, lng: 101.5241 }}
+                initialZoom={14}
+              />
+            </div>
+
+            {/* Sungai Siput Map */}
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <div className="bg-white p-4 border-b">
+                <h3 className="font-bold text-foreground mb-2">Sungai Siput Plant</h3>
+                <p className="text-sm text-muted-foreground">Sungai Siput, Perak</p>
+              </div>
+              <MapView 
+                initialCenter={{ lat: 4.1667, lng: 101.5000 }}
+                initialZoom={14}
+              />
+            </div>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Kuala Kangsar Plant",
+                coverage: "Kuala Kangsar, Lenggong, surrounding areas",
+                contact: "Phone: +60 17-518 3668"
+              },
+              {
+                title: "Sungai Siput Plant",
+                coverage: "Sungai Siput, Manong, Padang Rengas",
+                contact: "Phone: +60 11-1119 2359"
+              },
+              {
+                title: "HCT-01 Plant (Ipoh)",
+                coverage: "Ipoh, Meru, Chemor, and nearby areas",
+                contact: "Phone: 05-777 2169"
+              }
+            ].map((plant, idx) => (
+              <Card key={idx} className="p-6 border-l-4 border-l-primary">
+                <h4 className="font-bold text-foreground mb-3">{plant.title}</h4>
+                <p className="text-sm text-muted-foreground mb-4">
+                  <span className="font-semibold">Coverage:</span> {plant.coverage}
+                </p>
+                <p className="text-sm text-primary font-semibold">{plant.contact}</p>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
