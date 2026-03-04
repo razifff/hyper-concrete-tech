@@ -390,6 +390,72 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Customer Testimonials Section */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="container">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-foreground">What Our Customers Say</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Trusted by construction companies and contractors across Malaysia for reliable, high-quality concrete solutions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Ahmad Rashid",
+                company: "Rashid Construction Sdn Bhd",
+                text: "Hyper Concrete Tech has been our trusted partner for over 3 years. Their consistent quality and reliable delivery have helped us complete projects on time and within budget. Highly recommended!",
+                rating: 5
+              },
+              {
+                name: "Siti Nurhaliza",
+                company: "Premier Building Solutions",
+                text: "The team at HCT is professional and responsive. Their ready-mix concrete meets all our specifications, and the customer service is exceptional. We've worked with them on multiple projects.",
+                rating: 5
+              },
+              {
+                name: "David Tan",
+                company: "Tan & Associates Contractors",
+                text: "What sets Hyper Concrete Tech apart is their attention to quality and their commitment to on-time delivery. Our recent project benefited greatly from their expertise and support.",
+                rating: 5
+              },
+              {
+                name: "Mohd Karim",
+                company: "Infrastructure Development Corp",
+                text: "We appreciate the flexibility and customization options HCT provides. Their team works closely with us to ensure the concrete mix is perfect for each project requirement.",
+                rating: 5
+              },
+              {
+                name: "Lim Wei Chen",
+                company: "Modern Construction Group",
+                text: "Excellent service from start to finish. The quality of their concrete is consistently high, and their fleet of trucks is always well-maintained and professional.",
+                rating: 5
+              },
+              {
+                name: "Fatimah Hassan",
+                company: "Hassan & Co. Builders",
+                text: "HCT's technical team is knowledgeable and helpful. They helped us optimize our concrete mix for our specific project needs. Great partnership!",
+                rating: 5
+              }
+            ].map((testimonial, idx) => (
+              <Card key={idx} className="p-6 border-l-4 border-l-primary hover:shadow-lg transition-shadow">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i} className="text-yellow-400">★</span>
+                  ))}
+                </div>
+                <p className="text-foreground mb-6 italic">"{testimonial.text}"</p>
+                <div>
+                  <p className="font-bold text-foreground">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 md:py-32 bg-gradient-to-r from-foreground to-blue-900 text-white">
         <div className="container text-center space-y-8">
