@@ -106,10 +106,10 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white">
-        <div className="container py-20 md:py-32">
+        <div className="container py-12 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Left: Text */}
-            <div className="space-y-8 animate-fade-in">
+            <div className="space-y-6 animate-fade-in">
               <div className="space-y-4">
                 <h1 className="text-foreground leading-tight">
                   Premier Ready-Mix Concrete Solutions
@@ -132,7 +132,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border">
+              <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
                 <div>
                   <div className="text-2xl font-bold text-primary">3</div>
                   <p className="text-sm text-muted-foreground">Plant Locations</p>
@@ -167,16 +167,16 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="bg-white py-20 md:py-32">
+      <section id="about" className="bg-white py-12 md:py-20">
         <div className="container">
-          <div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
+          <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
             <h2 className="text-foreground">About Hyper Concrete Technologies</h2>
             <p className="text-lg text-muted-foreground">
               We are passionate about delivering top-notch ready-mix concrete products tailored to meet your construction needs. With two strategically positioned plants and a commitment to excellence, we serve the construction industry across Malaysia.
             </p>
           </div>
 
-          <div className="mb-12">
+          <div className="mb-8">
             <div className="relative w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-xl" style={{aspectRatio: '16/9'}}>
               <video 
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/AQMiVEQkyF29xc7kH0aOsVAQe-FPVl15E0ix4DvSyUor-f0J89Gwp8IlC1i3NLPdBduRM1WCjkxOLpLxTHKjyeVr_852d86f6.mp4"
@@ -198,7 +198,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 md:py-32 bg-gray-50">
+      <section id="services" className="py-12 md:py-20 bg-gray-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
             <h2 className="text-foreground">Our Services</h2>
@@ -242,7 +242,7 @@ export default function Home() {
       </section>
 
       {/* Quality Standards Section */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -318,7 +318,7 @@ export default function Home() {
       </section>
 
       {/* Delivery Process Section */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
             <h2 className="text-foreground">How We Deliver Excellence</h2>
@@ -354,7 +354,7 @@ export default function Home() {
       </section>
 
       {/* Truck Delivery Section */}
-      <section className="py-20 md:py-32 bg-gray-50">
+      <section className="py-12 md:py-20 bg-gray-50">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative h-96 rounded-lg overflow-hidden shadow-xl order-2 md:order-1">
@@ -392,7 +392,7 @@ export default function Home() {
       </section>
 
       {/* Interactive Map Section */}
-      <section className="py-20 md:py-32 bg-gray-50">
+      <section className="py-12 md:py-20 bg-gray-50">
         <div className="container">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-foreground">Our Plant Locations</h2>
@@ -427,7 +427,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 title: "HCT-01 Plant (Kuala Kangsar)",
@@ -458,7 +458,7 @@ export default function Home() {
       </section>
 
       {/* Customer Testimonials Section */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="container">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-foreground">What Our Customers Say</h2>
@@ -467,7 +467,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 name: "Ahmad Rashid",
@@ -524,8 +524,8 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-r from-foreground to-blue-900 text-white">
-        <div className="container text-center space-y-8">
+      <section className="py-12 md:py-20 bg-gradient-to-r from-foreground to-blue-900 text-white">
+        <div className="container text-center space-y-6">
           <h2 className="text-white">Ready to Get Started?</h2>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
             Contact us today to discuss your concrete requirements and receive a competitive quote.
@@ -546,7 +546,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 md:py-32 bg-white">
+      <section id="contact" className="py-12 md:py-20 bg-white">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center space-y-4 mb-16">
@@ -556,7 +556,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card className="p-8 text-center border-t-4 border-t-primary">
                 <Phone className="w-8 h-8 text-primary mx-auto mb-4" />
                 <h3 className="font-bold text-foreground mb-2">Phone</h3>
