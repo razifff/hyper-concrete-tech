@@ -92,18 +92,18 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
-        <div className="container flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
-            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/logo_fe4ed37f.jpg" alt="Hyper Concrete Tech Logo" className="h-12" />
+        <div className="container flex items-center justify-between h-20">
+          <div className="flex items-center gap-3">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/logo_fe4ed37f.jpg" alt="Hyper Concrete Tech Logo" className="h-16" />
           </div>
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">About</a>
-            <a href="#services" className="text-sm font-medium hover:text-primary transition-colors">Services</a>
-            <a href="#locations" className="text-sm font-medium hover:text-primary transition-colors">Locations</a>
-            <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</a>
+          <div className="hidden md:flex items-center gap-10">
+            <a href="#about" className="text-base font-medium hover:text-primary transition-colors">About</a>
+            <a href="#services" className="text-base font-medium hover:text-primary transition-colors">Services</a>
+            <a href="#locations" className="text-base font-medium hover:text-primary transition-colors">Locations</a>
+            <a href="#contact" className="text-base font-medium hover:text-primary transition-colors">Contact</a>
           </div>
           <a href="/get-quote">
-            <Button className="bg-primary text-primary-foreground hover:bg-blue-600">
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-blue-600">
               Get Quote
             </Button>
           </a>
@@ -415,7 +415,7 @@ export default function Home() {
                 <p className="text-sm text-muted-foreground">Kuala Kangsar, Perak</p>
               </div>
               <MapView 
-                initialCenter={{ lat: 4.7649, lng: 101.5204 }}
+                initialCenter={{ lat: 4.7993784, lng: 100.8953087 }}
                 initialZoom={14}
               />
             </div>

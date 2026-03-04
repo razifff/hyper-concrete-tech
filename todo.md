@@ -70,3 +70,8 @@
 - [ ] Create deployment documentation
 - [ ] Set up CI/CD pipeline
 - [ ] Performance optimization and caching
+
+## Bug Fixes
+
+- [x] Fix HCT-01 plant location coordinates on map (updated to correct coordinates: 4.7993784, 100.8953087)
+- [x] Increase header size (logo from h-12 to h-16, nav text from text-sm to text-base, button size-lg, header height h-20)
