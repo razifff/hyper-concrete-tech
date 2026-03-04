@@ -1,3 +1,4 @@
+import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ChevronRight, Truck, Zap, Shield, Award, MapPin, Phone, Mail } from "lucide-react";
@@ -14,6 +15,10 @@ import { MapView } from "@/components/Map";
  */
 
 export default function Home() {
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
   const [activeService, setActiveService] = useState(0);
 
   const services = [

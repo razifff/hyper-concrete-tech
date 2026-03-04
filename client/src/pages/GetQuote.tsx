@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ChevronLeft, Send } from "lucide-react";
+import { ChevronLeft, Send, AlertCircle, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useLocation } from "wouter";
+import { trpc } from "@/lib/trpc";
 
 /**
  * Design System: Industrial Minimalism
- * - Charcoal (#1a1a1a) base with cyan (#00d9ff) accents
+ * - Navy Blue (#1e3a8a) primary with professional slate grays
  * - Form styling with clear visual hierarchy
  * - Responsive layout for mobile and desktop
  */
@@ -14,20 +15,36 @@ import { useLocation } from "wouter";
 export default function GetQuote() {
   const [, setLocation] = useLocation();
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    plant: "HCT-01 Ipoh",
+    customerName: "",
+    customerEmail: "",
+    customerPhone: "",
+    companyName: "",
+    selectedPlant: "HCT-01 Ipoh",
     concreteType: "Standard Concrete",
     quantity: "",
-    deliveryLocation: "",
     projectType: "Building Construction",
-    deliveryDate: "",
+    deliveryLocation: "",
+    preferredDeliveryDate: "",
     additionalNotes: ""
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const submitQuoteMutation = trpc.quote.submit.useMutation({
+    onSuccess: () => {
+      setSubmitted(true);
+      setError(null);
+      setTimeout(() => {
+        setLocation("/");
+      }, 3000);
+    },
+    onError: (err) => {
+      setError(err.message || "Failed to submit quote request. Please try again.");
+      setIsSubmitting(false);
+    },
+  });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -35,16 +52,60 @@ export default function GetQuote() {
       ...prev,
       [name]: value
     }));
+    // Clear error when user starts typing
+    if (error) setError(null);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, this would send data to a backend
-    console.log("Quote Request:", formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setLocation("/");
-    }, 3000);
+    setIsSubmitting(true);
+    setError(null);
+
+    // Basic validation
+    if (!formData.customerName.trim()) {
+      setError("Please enter your name");
+      setIsSubmitting(false);
+      return;
+    }
+    if (!formData.customerEmail.trim()) {
+      setError("Please enter your email");
+      setIsSubmitting(false);
+      return;
+    }
+    if (!formData.customerPhone.trim()) {
+      setError("Please enter your phone number");
+      setIsSubmitting(false);
+      return;
+    }
+    if (!formData.quantity.trim()) {
+      setError("Please enter the quantity");
+      setIsSubmitting(false);
+      return;
+    }
+    if (!formData.deliveryLocation.trim()) {
+      setError("Please enter the delivery location");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      await submitQuoteMutation.mutateAsync({
+        customerName: formData.customerName,
+        customerEmail: formData.customerEmail,
+        customerPhone: formData.customerPhone,
+        companyName: formData.companyName || undefined,
+        selectedPlant: formData.selectedPlant,
+        concreteType: formData.concreteType,
+        quantity: formData.quantity,
+        projectType: formData.projectType,
+        deliveryLocation: formData.deliveryLocation,
+        preferredDeliveryDate: formData.preferredDeliveryDate || undefined,
+        additionalNotes: formData.additionalNotes || undefined,
+      });
+    } catch (err) {
+      // Error is handled by mutation's onError
+      console.error("Submission error:", err);
+    }
   };
 
   return (
@@ -96,6 +157,13 @@ export default function GetQuote() {
             </Card>
           ) : (
             <Card className="p-8 md:p-12 border-2 border-border">
+              {error && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
+                  <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-red-700 text-sm">{error}</p>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-8">
                 {/* Personal Information */}
                 <div>
@@ -105,11 +173,12 @@ export default function GetQuote() {
                       <label className="block text-sm font-medium text-foreground mb-2">Full Name *</label>
                       <input
                         type="text"
-                        name="name"
-                        value={formData.name}
+                        name="customerName"
+                        value={formData.customerName}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground"
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground disabled:bg-gray-100 disabled:cursor-not-allowed"
                         placeholder="Your name"
                       />
                     </div>
@@ -117,11 +186,12 @@ export default function GetQuote() {
                       <label className="block text-sm font-medium text-foreground mb-2">Email Address *</label>
                       <input
                         type="email"
-                        name="email"
-                        value={formData.email}
+                        name="customerEmail"
+                        value={formData.customerEmail}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground"
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground disabled:bg-gray-100 disabled:cursor-not-allowed"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -129,11 +199,12 @@ export default function GetQuote() {
                       <label className="block text-sm font-medium text-foreground mb-2">Phone Number *</label>
                       <input
                         type="tel"
-                        name="phone"
-                        value={formData.phone}
+                        name="customerPhone"
+                        value={formData.customerPhone}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground"
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground disabled:bg-gray-100 disabled:cursor-not-allowed"
                         placeholder="+60 5-777 2169"
                       />
                     </div>
@@ -141,10 +212,11 @@ export default function GetQuote() {
                       <label className="block text-sm font-medium text-foreground mb-2">Company Name</label>
                       <input
                         type="text"
-                        name="company"
-                        value={formData.company}
+                        name="companyName"
+                        value={formData.companyName}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground"
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground disabled:bg-gray-100 disabled:cursor-not-allowed"
                         placeholder="Your company"
                       />
                     </div>
@@ -158,15 +230,16 @@ export default function GetQuote() {
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">Select Plant *</label>
                       <select
-                        name="plant"
-                        value={formData.plant}
+                        name="selectedPlant"
+                        value={formData.selectedPlant}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground"
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground disabled:bg-gray-100 disabled:cursor-not-allowed"
                       >
                         <option value="HCT-01 Ipoh">HCT-01 Plant (Ipoh)</option>
-                        <option value="Sungai Siput">Sungai Siput Plant</option>
-                        <option value="Kuala Kangsar">Kuala Kangsar Plant</option>
+                        <option value="HCT-02 Sungai Siput">HCT-02 Plant (Sungai Siput)</option>
+                        <option value="HCT-01 Kuala Kangsar">HCT-01 Plant (Kuala Kangsar)</option>
                       </select>
                     </div>
                     <div>
@@ -176,7 +249,8 @@ export default function GetQuote() {
                         value={formData.concreteType}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground"
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground disabled:bg-gray-100 disabled:cursor-not-allowed"
                       >
                         <option value="Standard Concrete">Standard Concrete</option>
                         <option value="High Strength Concrete">High Strength Concrete</option>
@@ -193,9 +267,10 @@ export default function GetQuote() {
                         value={formData.quantity}
                         onChange={handleChange}
                         required
+                        disabled={isSubmitting}
                         step="0.1"
                         min="0"
-                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground"
+                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground disabled:bg-gray-100 disabled:cursor-not-allowed"
                         placeholder="e.g., 50"
                       />
                     </div>
@@ -206,7 +281,8 @@ export default function GetQuote() {
                         value={formData.projectType}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground"
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground disabled:bg-gray-100 disabled:cursor-not-allowed"
                       >
                         <option value="Building Construction">Building Construction</option>
                         <option value="Road & Highway">Road & Highway</option>
@@ -231,19 +307,20 @@ export default function GetQuote() {
                         value={formData.deliveryLocation}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground"
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground disabled:bg-gray-100 disabled:cursor-not-allowed"
                         placeholder="Project site address"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">Preferred Delivery Date *</label>
+                      <label className="block text-sm font-medium text-foreground mb-2">Preferred Delivery Date</label>
                       <input
                         type="date"
-                        name="deliveryDate"
-                        value={formData.deliveryDate}
+                        name="preferredDeliveryDate"
+                        value={formData.preferredDeliveryDate}
                         onChange={handleChange}
-                        required
-                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground"
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground disabled:bg-gray-100 disabled:cursor-not-allowed"
                       />
                     </div>
                   </div>
@@ -258,8 +335,9 @@ export default function GetQuote() {
                       name="additionalNotes"
                       value={formData.additionalNotes}
                       onChange={handleChange}
+                      disabled={isSubmitting}
                       rows={4}
-                      className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground"
+                      className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground disabled:bg-gray-100 disabled:cursor-not-allowed"
                       placeholder="Any special requirements or additional information..."
                     />
                   </div>
@@ -270,10 +348,20 @@ export default function GetQuote() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="bg-primary text-primary-foreground hover:bg-blue-600 flex-1"
+                    disabled={isSubmitting}
+                    className="bg-primary text-primary-foreground hover:bg-blue-600 flex-1 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <Send className="w-4 h-4 mr-2" />
-                    Submit Quote Request
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4 mr-2" />
+                        Submit Quote Request
+                      </>
+                    )}
                   </Button>
                   <Button
                     type="button"
@@ -281,6 +369,7 @@ export default function GetQuote() {
                     variant="outline"
                     className="border-primary text-primary hover:bg-primary/5"
                     onClick={() => setLocation("/")}
+                    disabled={isSubmitting}
                   >
                     Cancel
                   </Button>
