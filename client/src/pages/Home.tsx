@@ -5,8 +5,9 @@ import { useState } from "react";
 import { MapView } from "@/components/Map";
 
 /**
- * Design System: Industrial Minimalism
- * - Charcoal (#1a1a1a) base with cyan (#00d9ff) accents
+ * Design System: Corporate Navy Blue
+ * - Navy Blue (#1e3a8a) primary with professional slate grays
+ * - Clean, modern aesthetic with excellent readability
  * - Poppins for headings (bold, geometric), Inter for body (readable)
  * - Asymmetric layouts, diagonal dividers, staggered cards
  * - Scroll-triggered animations, smooth transitions
@@ -198,7 +199,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-12 md:py-20 bg-gray-50">
+      <section id="services" className="py-12 md:py-20 bg-slate-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
             <h2 className="text-foreground">Our Services</h2>
@@ -354,7 +355,7 @@ export default function Home() {
       </section>
 
       {/* Truck Delivery Section */}
-      <section className="py-12 md:py-20 bg-gray-50">
+      <section className="py-12 md:py-20 bg-slate-50">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative h-96 rounded-lg overflow-hidden shadow-xl order-2 md:order-1">
@@ -392,7 +393,7 @@ export default function Home() {
       </section>
 
       {/* Interactive Map Section */}
-      <section className="py-12 md:py-20 bg-gray-50">
+      <section className="py-12 md:py-20 bg-slate-50">
         <div className="container">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-foreground">Our Plant Locations</h2>
@@ -524,7 +525,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 md:py-20 bg-gradient-to-r from-foreground to-blue-900 text-white">
+      <section className="py-12 md:py-20 bg-gradient-to-r from-slate-900 to-blue-900 text-white">
         <div className="container text-center space-y-6">
           <h2 className="text-white">Ready to Get Started?</h2>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
