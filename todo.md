@@ -85,3 +85,13 @@
 ## Current Issues
 
 - [x] Fix Google Maps JavaScript API loaded multiple times error (added global promise caching to prevent duplicate script loads)
+
+## cPanel Deployment
+
+- [x] Setup .env file with database credentials for cPanel (.env.cPanel created)
+- [x] Configure server to use process.env.PORT (already configured in server/_core/index.ts)
+- [x] Ensure all static files in /public folder (handled by build process)
+- [x] Create production build (npm run build completed successfully)
+- [x] Create deployment guide for cPanel (DEPLOYMENT_GUIDE_CPANEL.md created)
+- [x] Create quick start guide (CPANEL_QUICK_START.md created)
+- [ ] Test deployment on cPanel (pending - user to execute)
