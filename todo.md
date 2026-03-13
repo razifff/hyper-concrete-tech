@@ -81,3 +81,7 @@
 - [x] Update locations array to remove Ipoh plant
 - [x] Update plant info cards to show only 2 plants
 - [x] Update Get Quote form plant options to remove Ipoh
+
+## Current Issues
+
+- [x] Fix Google Maps JavaScript API loaded multiple times error (added global promise caching to prevent duplicate script loads)
