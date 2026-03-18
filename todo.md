@@ -107,3 +107,8 @@
 - [x] Update navigation with new pages (About, Catalog links added to all pages)
 - [x] Test all pages on dev server (all tests passing: 11/11)
 - [x] Ready for checkpoint and delivery
+
+## Bug Fixes - Coverage Areas
+
+- [x] Fix HCT-01 Kuala Kangsar coverage area (now: Sungai Siput, Manong, Padang Rengas, Enggor, Lenggong)
+- [x] Fix HCT-02 Sungai Siput coverage area (now: Kuala Kangsar, Ipoh, Meru, Chemor, Tanjung Rambutan, Tasek)

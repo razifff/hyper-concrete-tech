@@ -49,7 +49,7 @@ export default function Home() {
     {
       name: "HCT-01 Plant (Kuala Kangsar)",
       region: "Perak",
-      coverage: "Kuala Kangsar, Ipoh, Meru, Chemor, Sungai Siput, Lenggong, and nearby areas",
+      coverage: "Sungai Siput, Manong, Padang Rengas, Enggor, Lenggong, and nearby areas",
       status: "Operational",
       address: "Lot 1976 Jalan Lubuk Merbau, Kawasan Perindustrian Miel Fasa 1, Taman Impian, 33010 Kuala Kangsar, Perak",
       phone: "+05-777 2169"
@@ -57,7 +57,7 @@ export default function Home() {
     {
       name: "HCT-02 Plant (Sungai Siput)",
       region: "Perak",
-      coverage: "Sungai Siput, Manong, Padang Rengas",
+      coverage: "Kuala Kangsar, Ipoh, Meru, Chemor, Tanjung Rambutan, Tasek, and nearby areas",
       status: "Operational",
       address: "Sungai Siput, Perak",
       phone: "+05-777 2169"
