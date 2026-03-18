@@ -112,3 +112,12 @@
 
 - [x] Fix HCT-01 Kuala Kangsar coverage area (now: Sungai Siput, Manong, Padang Rengas, Enggor, Lenggong)
 - [x] Fix HCT-02 Sungai Siput coverage area (now: Kuala Kangsar, Ipoh, Meru, Chemor, Tanjung Rambutan, Tasek)
+
+
+## Fleet & Truck Sizes Feature
+
+- [x] Search and download truck images (1m³, 3m³, 6m³ capacities) - uploaded to CDN
+- [x] Create Fleet page with truck specifications and advantages - comprehensive page with comparisons
+- [x] Add Fleet section to Catalog page - navigation updated
+- [x] Update navigation with Fleet link - added to all pages
+- [x] Test all pages and functionality - all tests passing (11/11)

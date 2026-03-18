@@ -146,11 +146,11 @@ export default function Catalog() {
           <div className="flex items-center gap-3">
             <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/logo_fe4ed37f.jpg" alt="Hyper Concrete Tech Logo" className="h-16" />
           </div>
-          <div className="hidden md:flex items-center gap-10">
-            <a href="/" className="text-base font-medium hover:text-primary transition-colors">Home</a>
-            <a href="/#about" className="text-base font-medium hover:text-primary transition-colors">About</a>
-            <a href="/#services" className="text-base font-medium hover:text-primary transition-colors">Services</a>
-            <a href="/#locations" className="text-base font-medium hover:text-primary transition-colors">Locations</a>
+          <div className="hidden md:flex items-center gap-8">
+            <a href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</a>
+            <a href="/catalog" className="text-sm font-medium hover:text-primary transition-colors">Catalog</a>
+            <a href="/fleet" className="text-sm font-medium hover:text-primary transition-colors">Fleet</a>
+            <a href="#locations" className="text-sm font-medium hover:text-primary transition-colors">Locations</a>
           </div>
           <a href="/get-quote">
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-blue-600">

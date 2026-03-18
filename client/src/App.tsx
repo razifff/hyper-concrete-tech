@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import GetQuote from "./pages/GetQuote";
 import Catalog from "./pages/Catalog";
 import About from "./pages/About";
+import Fleet from "./pages/Fleet";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -16,6 +17,7 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/about"} component={About} />
       <Route path={"/catalog"} component={Catalog} />
+      <Route path={"/fleet"} component={Fleet} />
       <Route path={"/get-quote"} component={GetQuote} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
