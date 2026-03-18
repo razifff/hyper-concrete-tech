@@ -95,3 +95,15 @@
 - [x] Create deployment guide for cPanel (DEPLOYMENT_GUIDE_CPANEL.md created)
 - [x] Create quick start guide (CPANEL_QUICK_START.md created)
 - [ ] Test deployment on cPanel (pending - user to execute)
+
+
+## Website Update - Company Profile Integration (March 2026)
+
+- [x] Update Home page with company profile information from PDF (Mission, Vision, company history, certifications)
+- [x] Create Catalog/Products page with concrete specifications (6 product grades with detailed specs)
+- [x] Create About Us page with Mission, Vision, and company history (timeline, team roles, values)
+- [x] Add certifications and standards section (JKKP, CIDB PPS, CREAM, MS EN206, ISO 9001:2015)
+- [x] Improve design and layout for professional appearance (gradient sections, card layouts, professional typography)
+- [x] Update navigation with new pages (About, Catalog links added to all pages)
+- [x] Test all pages on dev server (all tests passing: 11/11)
+- [x] Ready for checkpoint and delivery

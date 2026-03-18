@@ -1,7 +1,7 @@
 import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ChevronRight, Truck, Zap, Shield, Award, MapPin, Phone, Mail } from "lucide-react";
+import { ChevronRight, Truck, Zap, Shield, Award, MapPin, Phone, Mail, CheckCircle, Building2, Users, Briefcase } from "lucide-react";
 import { useState } from "react";
 import { MapView } from "@/components/Map";
 
@@ -15,10 +15,7 @@ import { MapView } from "@/components/Map";
  */
 
 export default function Home() {
-  // The userAuth hooks provides authentication state
-  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
   let { user, loading, error, isAuthenticated, logout } = useAuth();
-
   const [activeService, setActiveService] = useState(0);
 
   const services = [
@@ -53,13 +50,17 @@ export default function Home() {
       name: "HCT-01 Plant (Kuala Kangsar)",
       region: "Perak",
       coverage: "Kuala Kangsar, Ipoh, Meru, Chemor, Sungai Siput, Lenggong, and nearby areas",
-      status: "Operational"
+      status: "Operational",
+      address: "Lot 1976 Jalan Lubuk Merbau, Kawasan Perindustrian Miel Fasa 1, Taman Impian, 33010 Kuala Kangsar, Perak",
+      phone: "+05-777 2169"
     },
     {
       name: "HCT-02 Plant (Sungai Siput)",
       region: "Perak",
       coverage: "Sungai Siput, Manong, Padang Rengas",
-      status: "Operational"
+      status: "Operational",
+      address: "Sungai Siput, Perak",
+      phone: "+05-777 2169"
     }
   ];
 
@@ -82,6 +83,15 @@ export default function Home() {
     }
   ];
 
+  const certifications = [
+    { name: "JKKP Registration (HCT-01)", code: "PK/22/01/190613" },
+    { name: "CIDB PPS (HCT-01)", code: "1240 529 PK 1207" },
+    { name: "CIDB PPS (HCT-02)", code: "1240 530 PK 1209" },
+    { name: "CREAM Certification (HCT-01)", code: "CCS PC 0807-24025" },
+    { name: "CREAM Certification (HCT-02)", code: "CCS PC 0807-24026" },
+    { name: "MS EN206 Compliant", code: "International Standard" }
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
@@ -91,7 +101,8 @@ export default function Home() {
             <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/logo_fe4ed37f.jpg" alt="Hyper Concrete Tech Logo" className="h-16" />
           </div>
           <div className="hidden md:flex items-center gap-10">
-            <a href="#about" className="text-base font-medium hover:text-primary transition-colors">About</a>
+            <a href="/about" className="text-base font-medium hover:text-primary transition-colors">About</a>
+            <a href="/catalog" className="text-base font-medium hover:text-primary transition-colors">Catalog</a>
             <a href="#services" className="text-base font-medium hover:text-primary transition-colors">Services</a>
             <a href="#locations" className="text-base font-medium hover:text-primary transition-colors">Locations</a>
             <a href="#contact" className="text-base font-medium hover:text-primary transition-colors">Contact</a>
@@ -115,7 +126,7 @@ export default function Home() {
                   Premier Ready-Mix Concrete Solutions
                 </h1>
                 <p className="text-lg text-muted-foreground">
-                  Delivering exceptional quality, reliability, and innovation to construction projects across Malaysia.
+                  Delivering exceptional quality, reliability, and innovation to construction projects across Malaysia. Hyper Concrete Technologies is your trusted partner for premium ready-mix concrete with 24/7 support.
                 </p>
               </div>
               
@@ -166,17 +177,80 @@ export default function Home() {
         </svg>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="bg-white py-12 md:py-20">
+      {/* Company Profile Section */}
+      <section className="bg-white py-12 md:py-20">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center space-y-4 mb-12">
+              <h2 className="text-foreground">About Hyper Concrete Technologies</h2>
+              <p className="text-lg text-muted-foreground">
+                Founded in 2020, Hyper Concrete Technologies Sdn. Bhd. (Registration No: 202001026809) is a ready-mix concrete manufacturing company committed to excellence and innovation in the construction industry.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <Card className="p-8 bg-gradient-to-br from-blue-50 to-white border-l-4 border-l-primary">
+                <div className="flex items-start gap-4">
+                  <Building2 className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-3">Our Foundation</h3>
+                    <p className="text-muted-foreground">
+                      Hyper Concrete Technologies was founded by two highly experienced enterprises: IFU ERAS ENTERPRISE (20+ years in contractions and machinery) and MEKAYA ENTERPRISE (25+ years in engineering and welding work). This combined expertise positions us as a leader in the ready-mix concrete industry.
+                    </p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-8 bg-gradient-to-br from-slate-50 to-white border-l-4 border-l-primary">
+                <div className="flex items-start gap-4">
+                  <Users className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-3">Our Team</h3>
+                    <p className="text-muted-foreground">
+                      Our workforce comprises highly experienced Civil Engineers, Technicians, Safety & Health specialists, IT professionals, and skilled tradesmen. We invest in continuous training to ensure our team meets the highest industry standards and exceeds client expectations.
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            {/* Mission & Vision */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <Card className="p-8 border-t-4 border-t-primary">
+                <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+                  <Briefcase className="w-6 h-6 text-primary" />
+                  Our Mission
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  To provide reliable and innovative concrete solutions that meet the highest standards of quality and sustainability. We aim to support our clients' construction projects with excellent service, technical expertise, and a commitment to environmental stewardship.
+                </p>
+              </Card>
+
+              <Card className="p-8 border-t-4 border-t-primary">
+                <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+                  <Award className="w-6 h-6 text-primary" />
+                  Our Vision
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  To be the leading provider of ready-mixed concrete in Malaysia, renowned for our quality products, exceptional customer service, and contributions to sustainable construction. We aspire to be the preferred partner for construction projects throughout the nation.
+                </p>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section with Video */}
+      <section id="about" className="bg-slate-50 py-12 md:py-20">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
-            <h2 className="text-foreground">About Hyper Concrete Technologies</h2>
+            <h2 className="text-foreground">Why Choose Hyper Concrete Technologies?</h2>
             <p className="text-lg text-muted-foreground">
-              We are passionate about delivering top-notch ready-mix concrete products tailored to meet your construction needs. With two strategically positioned plants and a commitment to excellence, we serve the construction industry across Malaysia.
+              We combine decades of industry experience with modern technology and customer-centric values to deliver exceptional concrete solutions.
             </p>
           </div>
 
-          <div className="mb-8">
+          <div className="mb-12">
             <div className="relative w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-xl" style={{aspectRatio: '16/9'}}>
               <video 
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/AQMiVEQkyF29xc7kH0aOsVAQe-FPVl15E0ix4DvSyUor-f0J89Gwp8IlC1i3NLPdBduRM1WCjkxOLpLxTHKjyeVr_852d86f6.mp4"
@@ -198,7 +272,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-12 md:py-20 bg-slate-50">
+      <section id="services" className="py-12 md:py-20 bg-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
             <h2 className="text-foreground">Our Services</h2>
@@ -215,13 +289,13 @@ export default function Home() {
                   key={idx}
                   className={`p-8 cursor-pointer transition-all border-2 ${
                     activeService === idx 
-                      ? 'border-primary bg-white shadow-lg' 
+                      ? 'border-primary bg-blue-50 shadow-lg' 
                       : 'border-border hover:border-primary/50'
                   }`}
                   onClick={() => setActiveService(idx)}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-primary/10 rounded-lg">
+                    <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
                       <IconComponent className="w-6 h-6 text-primary" />
                     </div>
                     <div className="flex-1">
@@ -242,18 +316,18 @@ export default function Home() {
       </section>
 
       {/* Quality Standards Section */}
-      <section className="py-12 md:py-20 bg-white">
+      <section className="py-12 md:py-20 bg-slate-50">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-foreground mb-8">Quality & Compliance</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Our ready-mixed concrete blends adhere to rigorous international standards and specifications.
+                Our ready-mixed concrete blends adhere to rigorous international standards and specifications, ensuring durability and performance for every project.
               </p>
               <div className="space-y-4">
                 {["MS EN206", "CIS 21", "B.S. Standards", "ISO 9001:2015", "EuroCode2"].map((standard, idx) => (
                   <div key={idx} className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                     <span className="font-medium text-foreground">{standard}</span>
                   </div>
                 ))}
@@ -270,13 +344,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Certifications Section */}
+      <section id="certifications" className="py-12 md:py-20 bg-white">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
+            <h2 className="text-foreground">Certifications & Registrations</h2>
+            <p className="text-lg text-muted-foreground">
+              Our facilities are fully certified and registered with relevant authorities, ensuring compliance with all industry standards and regulations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {certifications.map((cert, idx) => (
+              <Card key={idx} className="p-6 border-l-4 border-l-primary hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="font-bold text-foreground mb-1">{cert.name}</h4>
+                    <p className="text-sm text-muted-foreground">{cert.code}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Plant Locations Section */}
-      <section id="locations" className="py-20 md:py-32 bg-gray-50">
+      <section id="locations" className="py-20 md:py-32 bg-slate-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
             <h2 className="text-foreground">Our Plant Locations</h2>
             <p className="text-lg text-muted-foreground">
-              Strategically positioned facilities ensuring rapid delivery and optimal concrete freshness
+              Strategically positioned facilities ensuring rapid delivery and optimal concrete freshness across Perak and surrounding regions.
             </p>
           </div>
 
@@ -290,10 +390,18 @@ export default function Home() {
                     <p className="text-sm text-muted-foreground">{location.region}</p>
                   </div>
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   <div>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wide">Coverage Area</p>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wide font-semibold mb-1">Address</p>
+                    <p className="text-foreground text-sm">{location.address}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wide font-semibold mb-1">Coverage Area</p>
                     <p className="text-foreground font-medium">{location.coverage}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wide font-semibold mb-1">Contact</p>
+                    <p className="text-foreground font-medium">{location.phone}</p>
                   </div>
                   <div className="pt-4 border-t border-border">
                     <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded">
@@ -317,295 +425,79 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Delivery Process Section */}
-      <section className="py-12 md:py-20 bg-white">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
-            <h2 className="text-foreground">How We Deliver Excellence</h2>
-            <p className="text-lg text-muted-foreground">
-              From production to your site, every step ensures quality and reliability
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {[
-              { number: "01", title: "Order", description: "Place your concrete order with specific requirements" },
-              { number: "02", title: "Production", description: "Mix concrete to exact specifications in our facility" },
-              { number: "03", title: "Quality Check", description: "Rigorous testing ensures standards compliance" },
-              { number: "04", title: "Delivery", description: "On-time delivery with fresh, quality concrete" }
-            ].map((step, idx) => (
-              <div key={idx} className="relative">
-                <div className="text-center space-y-4">
-                  <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto font-bold text-xl">
-                    {step.number}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-foreground mb-2">{step.title}</h4>
-                    <p className="text-sm text-muted-foreground">{step.description}</p>
-                  </div>
-                </div>
-                {idx < 3 && (
-                  <div className="hidden md:block absolute top-8 left-[60%] w-[40%] h-0.5 bg-gradient-to-r from-primary to-transparent"></div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Truck Delivery Section */}
-      <section className="py-12 md:py-20 bg-slate-50">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-96 rounded-lg overflow-hidden shadow-xl order-2 md:order-1">
-              <video 
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/1000350880_f6291242.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="order-1 md:order-2">
-              <h2 className="text-foreground mb-6">Reliable Delivery Fleet</h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                Our modern fleet of mixer trucks ensures timely delivery of fresh, high-quality concrete to your construction site.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  "Modern, well-maintained mixer trucks",
-                  "GPS-tracked for real-time updates",
-                  "Professional, trained drivers",
-                  "Flexible scheduling to meet your needs",
-                  "Reduced transportation times from our plants"
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Interactive Map Section */}
-      <section className="py-12 md:py-20 bg-slate-50">
-        <div className="container">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-foreground">Our Plant Locations</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Visit our strategically located plants across Perak for reliable, fresh concrete delivery.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Kuala Kangsar Map */}
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <div className="bg-white p-4 border-b">
-                <h3 className="font-bold text-foreground mb-2">Kuala Kangsar Plant</h3>
-                <p className="text-sm text-muted-foreground">Kuala Kangsar, Perak</p>
-              </div>
-              <MapView 
-                initialCenter={{ lat: 4.7993784, lng: 100.8953087 }}
-                initialZoom={14}
-              />
-            </div>
-
-            {/* Sungai Siput Map */}
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <div className="bg-white p-4 border-b">
-                <h3 className="font-bold text-foreground mb-2">Sungai Siput Plant</h3>
-                <p className="text-sm text-muted-foreground">Sungai Siput, Perak</p>
-              </div>
-              <MapView 
-                initialCenter={{ lat: 4.7831939, lng: 101.1079234 }}
-                initialZoom={14}
-              />
-            </div>
-          </div>
-
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                title: "HCT-01 Plant (Kuala Kangsar)",
-                coverage: "Kuala Kangsar, Ipoh, Meru, Chemor, Lenggong, and nearby areas",
-                contact: "Phone: +60 17-518 3668"
-              },
-              {
-                title: "HCT-02 Plant (Sungai Siput)",
-                coverage: "Sungai Siput, Manong, Padang Rengas",
-                contact: "Phone: +60 11-1119 2359"
-              }
-            ].map((plant, idx) => (
-              <Card key={idx} className="p-6 border-l-4 border-l-primary">
-                <h4 className="font-bold text-foreground mb-3">{plant.title}</h4>
-                <p className="text-sm text-muted-foreground mb-4">
-                  <span className="font-semibold">Coverage:</span> {plant.coverage}
-                </p>
-                <p className="text-sm text-primary font-semibold">{plant.contact}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Customer Testimonials Section */}
-      <section className="py-12 md:py-20 bg-white">
-        <div className="container">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-foreground">What Our Customers Say</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Trusted by construction companies and contractors across Malaysia for reliable, high-quality concrete solutions.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                name: "Ahmad Rashid",
-                company: "Rashid Construction Sdn Bhd",
-                text: "Hyper Concrete Tech has been our trusted partner for over 3 years. Their consistent quality and reliable delivery have helped us complete projects on time and within budget. Highly recommended!",
-                rating: 5
-              },
-              {
-                name: "Siti Nurhaliza",
-                company: "Premier Building Solutions",
-                text: "The team at HCT is professional and responsive. Their ready-mix concrete meets all our specifications, and the customer service is exceptional. We've worked with them on multiple projects.",
-                rating: 5
-              },
-              {
-                name: "David Tan",
-                company: "Tan & Associates Contractors",
-                text: "What sets Hyper Concrete Tech apart is their attention to quality and their commitment to on-time delivery. Our recent project benefited greatly from their expertise and support.",
-                rating: 5
-              },
-              {
-                name: "Mohd Karim",
-                company: "Infrastructure Development Corp",
-                text: "We appreciate the flexibility and customization options HCT provides. Their team works closely with us to ensure the concrete mix is perfect for each project requirement.",
-                rating: 5
-              },
-              {
-                name: "Lim Wei Chen",
-                company: "Modern Construction Group",
-                text: "Excellent service from start to finish. The quality of their concrete is consistently high, and their fleet of trucks is always well-maintained and professional.",
-                rating: 5
-              },
-              {
-                name: "Fatimah Hassan",
-                company: "Hassan & Co. Builders",
-                text: "HCT's technical team is knowledgeable and helpful. They helped us optimize our concrete mix for our specific project needs. Great partnership!",
-                rating: 5
-              }
-            ].map((testimonial, idx) => (
-              <Card key={idx} className="p-6 border-l-4 border-l-primary hover:shadow-lg transition-shadow">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400">★</span>
-                  ))}
-                </div>
-                <p className="text-foreground mb-6 italic">"{testimonial.text}"</p>
-                <div>
-                  <p className="font-bold text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.company}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-12 md:py-20 bg-gradient-to-r from-slate-900 to-blue-900 text-white">
-        <div className="container text-center space-y-6">
-          <h2 className="text-white">Ready to Get Started?</h2>
-          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-            Contact us today to discuss your concrete requirements and receive a competitive quote.
-          </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/get-quote">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-blue-600">
-                Request Quote
-              </Button>
-            </a>
-            <a href="#contact">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                Contact Us
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-12 md:py-20 bg-white">
         <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center space-y-4 mb-16">
-              <h2 className="text-foreground">Get In Touch</h2>
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center space-y-4 mb-12">
+              <h2 className="text-foreground">Get in Touch</h2>
               <p className="text-lg text-muted-foreground">
-                Have questions? We're here to help and provide the concrete solutions you need.
+                Have questions about our concrete solutions? Contact us today for a quote or more information.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <Card className="p-8 text-center border-t-4 border-t-primary">
                 <Phone className="w-8 h-8 text-primary mx-auto mb-4" />
                 <h3 className="font-bold text-foreground mb-2">Phone</h3>
-                <p className="text-muted-foreground">05-777 2169</p>
+                <p className="text-muted-foreground">+05-777 2169</p>
+                <p className="text-muted-foreground text-sm">017-502 6663 / 011-111 92359</p>
               </Card>
+
               <Card className="p-8 text-center border-t-4 border-t-primary">
                 <Mail className="w-8 h-8 text-primary mx-auto mb-4" />
                 <h3 className="font-bold text-foreground mb-2">Email</h3>
                 <p className="text-muted-foreground">admin@hyperconcretetech.com</p>
               </Card>
+
               <Card className="p-8 text-center border-t-4 border-t-primary">
                 <MapPin className="w-8 h-8 text-primary mx-auto mb-4" />
-                <h3 className="font-bold text-foreground mb-2">Locations</h3>
-                <p className="text-muted-foreground">Sungai Siput & Kuala Kangsar</p>
+                <h3 className="font-bold text-foreground mb-2">Address</h3>
+                <p className="text-muted-foreground text-sm">Lot 4794 Kg. Tebing Tinggi, Jalan Besar Karai, Enggor, 33600 Perak</p>
               </Card>
+            </div>
+
+            <div className="mt-12">
+              <a href="/get-quote">
+                <Button size="lg" className="w-full bg-primary text-primary-foreground hover:bg-blue-600">
+                  Request a Quote Today
+                </Button>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground text-white py-12">
+      <footer className="bg-slate-900 text-white py-12">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h4 className="font-bold mb-4">Hyper Concrete Tech</h4>
-              <p className="text-gray-300 text-sm">Premier ready-mix concrete solutions for Malaysia's construction industry.</p>
+              <h4 className="font-bold mb-4">Hyper Concrete Technologies</h4>
+              <p className="text-slate-400 text-sm">
+                Premier ready-mix concrete solutions for construction projects across Malaysia.
+              </p>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li><a href="#" className="hover:text-primary transition-colors">Ready-Mix Delivery</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Quality Assurance</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Custom Solutions</a></li>
+              <h4 className="font-bold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
+                <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
+                <li><a href="#locations" className="hover:text-white transition-colors">Locations</a></li>
+                <li><a href="/get-quote" className="hover:text-white transition-colors">Get Quote</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Our Plants</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
+              <h4 className="font-bold mb-4">Contact Info</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li>Phone: +05-777 2169</li>
+                <li>Email: admin@hyperconcretetech.com</li>
+                <li>Reg. No: 202001026809</li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
-            <p>&copy; 2026 Hyper Concrete Technologies Sdn Bhd. All rights reserved.</p>
+          <div className="border-t border-slate-700 pt-8 text-center text-slate-400 text-sm">
+            <p>&copy; 2024 Hyper Concrete Technologies Sdn. Bhd. All rights reserved.</p>
           </div>
         </div>
       </footer>

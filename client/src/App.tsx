@@ -6,12 +6,16 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import GetQuote from "./pages/GetQuote";
+import Catalog from "./pages/Catalog";
+import About from "./pages/About";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/about"} component={About} />
+      <Route path={"/catalog"} component={Catalog} />
       <Route path={"/get-quote"} component={GetQuote} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
