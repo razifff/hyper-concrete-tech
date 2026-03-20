@@ -136,3 +136,15 @@
 - [x] All 11 tests still passing
 - [x] Build successful
 - [x] Mobile users can now access Fleet menu and all navigation items from any page
+
+
+## Truck Image Full-Size Display
+
+- [x] Increase truck image height from h-80 to h-96 md:h-[500px]
+- [x] Expand image column to md:col-span-2 (2/3 width) for prominent display
+- [x] Add hover zoom effect (hover:scale-105) for interactivity
+- [x] Increase shadow for better visual prominence
+- [x] Images now display full-size on both mobile and desktop views
+- [x] Customers can now visualize actual truck size at their construction sites
+- [x] All 11 tests passing
+- [x] Build successful

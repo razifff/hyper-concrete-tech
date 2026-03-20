@@ -201,17 +201,19 @@ export default function Fleet() {
             </p>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-16">
             {truckSizes.map((truck, idx) => (
-              <div key={truck.id} className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${idx % 2 === 1 ? "md:grid-cols-2 md:[&>*:first-child]:order-2" : ""}`}>
-                {/* Image */}
-                <div className="relative h-80 rounded-lg overflow-hidden shadow-xl">
-                  <img 
-                    src={truck.image}
-                    alt={truck.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-r ${truck.color} opacity-10`}></div>
+              <div key={truck.id} className={`grid grid-cols-1 md:grid-cols-3 gap-8 items-center ${idx % 2 === 1 ? "md:grid-cols-3 md:[&>*:first-child]:order-2" : ""}`}>
+                {/* Image - Full Size */}
+                <div className="md:col-span-2">
+                  <div className="relative w-full h-96 md:h-[500px] rounded-lg overflow-hidden shadow-2xl">
+                    <img 
+                      src={truck.image}
+                      alt={truck.title}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-r ${truck.color} opacity-5`}></div>
+                  </div>
                 </div>
 
                 {/* Content */}
