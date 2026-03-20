@@ -124,11 +124,15 @@
 
 ## Mobile Navigation Fix
 
-- [x] Identify missing navigation menu on mobile view
+- [x] Identify missing navigation menu on mobile view (only Get Quote button visible on mobile)
 - [x] Add hamburger menu button for mobile (Menu/X icons from lucide-react)
-- [x] Implement mobile menu dropdown with all navigation items (About, Catalog, Services, Locations, Contact)
+- [x] Implement mobile menu dropdown with all navigation items (Home, About, Catalog, Fleet, Locations)
 - [x] Add mobileMenuOpen state to manage menu visibility
 - [x] Menu auto-closes after clicking link
 - [x] Get Quote button also appears in mobile menu
+- [x] Apply mobile menu fix to Home.tsx
+- [x] Apply mobile menu fix to Catalog.tsx
+- [x] Apply mobile menu fix to Fleet.tsx
 - [x] All 11 tests still passing
 - [x] Build successful
+- [x] Mobile users can now access Fleet menu and all navigation items from any page

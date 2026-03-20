@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ChevronRight, Truck, Zap, MapPin, Users, CheckCircle } from "lucide-react";
+import { ChevronRight, Truck, Zap, MapPin, Users, CheckCircle, Menu, X } from "lucide-react";
+import { useState } from "react";
 
 /**
  * Fleet & Truck Sizes Page
@@ -8,6 +9,7 @@ import { ChevronRight, Truck, Zap, MapPin, Users, CheckCircle } from "lucide-rea
  */
 
 export default function Fleet() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const truckSizes = [
     {
       id: 1,
@@ -105,6 +107,8 @@ export default function Fleet() {
           <div className="flex items-center gap-3">
             <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/logo_fe4ed37f.jpg" alt="Hyper Concrete Tech Logo" className="h-16" />
           </div>
+          
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-10">
             <a href="/" className="text-base font-medium hover:text-primary transition-colors">Home</a>
             <a href="/about" className="text-base font-medium hover:text-primary transition-colors">About</a>
@@ -112,12 +116,40 @@ export default function Fleet() {
             <a href="/fleet" className="text-base font-medium hover:text-primary transition-colors">Fleet</a>
             <a href="/#locations" className="text-base font-medium hover:text-primary transition-colors">Locations</a>
           </div>
-          <a href="/get-quote">
+          
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+          
+          <a href="/get-quote" className="hidden sm:block">
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-blue-600">
               Get Quote
             </Button>
           </a>
         </div>
+        
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-border">
+            <div className="container py-4 space-y-3">
+              <a href="/" className="block text-base font-medium hover:text-primary transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>Home</a>
+              <a href="/about" className="block text-base font-medium hover:text-primary transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>About</a>
+              <a href="/catalog" className="block text-base font-medium hover:text-primary transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>Catalog</a>
+              <a href="/fleet" className="block text-base font-medium hover:text-primary transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>Fleet</a>
+              <a href="/#locations" className="block text-base font-medium hover:text-primary transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>Locations</a>
+              <a href="/get-quote" className="block sm:hidden">
+                <Button className="w-full bg-primary text-primary-foreground hover:bg-blue-600">
+                  Get Quote
+                </Button>
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
