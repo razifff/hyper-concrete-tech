@@ -13,7 +13,7 @@ export default function Fleet() {
       id: 1,
       capacity: "1 Cubic Meter",
       title: "Mini Mixer Truck",
-      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/concrete-truck-delivery_2302f9ed.png",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/1000380156_2ebb7bf3.jpg",
       advantages: [
         "Perfect for tight access roads and narrow construction sites",
         "Ideal for small-scale projects and repairs",
@@ -28,13 +28,13 @@ export default function Fleet() {
         fuelType: "Diesel",
         idealFor: "Small projects, tight spaces"
       },
-      badgeClass: "bg-blue-500"
+      color: "from-blue-400 to-blue-600"
     },
     {
       id: 2,
       capacity: "3 Cubic Meters",
       title: "Standard Mixer Truck",
-      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/concrete-truck-delivery_2302f9ed.png",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/1000380161_adfe60e6.jpg",
       advantages: [
         "Most versatile option for medium-sized projects",
         "Balanced capacity for efficiency and flexibility",
@@ -49,13 +49,13 @@ export default function Fleet() {
         fuelType: "Diesel",
         idealFor: "Medium projects, standard sites"
       },
-      badgeClass: "bg-green-500"
+      color: "from-green-400 to-green-600"
     },
     {
       id: 3,
       capacity: "6 Cubic Meters",
       title: "Large Capacity Truck",
-      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/concrete-truck-delivery_2302f9ed.png",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/grok_image_1773823449173_d97454ae.jpg",
       advantages: [
         "Maximum capacity for large-scale projects",
         "Ideal for high-volume concrete requirements",
@@ -70,7 +70,7 @@ export default function Fleet() {
         fuelType: "Diesel",
         idealFor: "Large projects, bulk orders"
       },
-      badgeClass: "bg-orange-500"
+      color: "from-orange-400 to-orange-600"
     }
   ];
 
@@ -179,12 +179,13 @@ export default function Fleet() {
                     alt={truck.title}
                     className="w-full h-full object-cover"
                   />
+                  <div className={`absolute inset-0 bg-gradient-to-r ${truck.color} opacity-10`}></div>
                 </div>
 
                 {/* Content */}
                 <div className="space-y-6">
                   <div>
-                    <div className={`inline-block px-4 py-2 ${truck.badgeClass} text-white rounded-full text-sm font-bold mb-4`}>
+                    <div className={`inline-block px-4 py-2 bg-gradient-to-r ${truck.color} text-white rounded-full text-sm font-bold mb-4`}>
                       {truck.capacity}
                     </div>
                     <h3 className="text-3xl font-bold text-foreground mb-2">{truck.title}</h3>
@@ -260,31 +261,31 @@ export default function Fleet() {
               </thead>
               <tbody>
                 <tr className="hover:bg-slate-50">
-                  <td className="border border-border p-4 font-bold text-foreground">Capacity</td>
+                  <td className="border border-border p-4 font-bold">Capacity</td>
                   <td className="border border-border p-4 text-center">1 m³</td>
                   <td className="border border-border p-4 text-center">3 m³</td>
                   <td className="border border-border p-4 text-center">6 m³</td>
                 </tr>
                 <tr className="hover:bg-slate-50">
-                  <td className="border border-border p-4 font-bold text-foreground">Max Load</td>
+                  <td className="border border-border p-4 font-bold">Max Load</td>
                   <td className="border border-border p-4 text-center">2-3 tons</td>
                   <td className="border border-border p-4 text-center">5-7 tons</td>
                   <td className="border border-border p-4 text-center">10-12 tons</td>
                 </tr>
                 <tr className="hover:bg-slate-50">
-                  <td className="border border-border p-4 font-bold text-foreground">Access</td>
+                  <td className="border border-border p-4 font-bold">Access</td>
                   <td className="border border-border p-4 text-center">✓ Excellent</td>
                   <td className="border border-border p-4 text-center">✓ Good</td>
                   <td className="border border-border p-4 text-center">✓ Standard</td>
                 </tr>
                 <tr className="hover:bg-slate-50">
-                  <td className="border border-border p-4 font-bold text-foreground">Cost per m³</td>
+                  <td className="border border-border p-4 font-bold">Cost per m³</td>
                   <td className="border border-border p-4 text-center">Higher</td>
                   <td className="border border-border p-4 text-center">Medium</td>
                   <td className="border border-border p-4 text-center">Lower</td>
                 </tr>
                 <tr className="hover:bg-slate-50">
-                  <td className="border border-border p-4 font-bold text-foreground">Best For</td>
+                  <td className="border border-border p-4 font-bold">Best For</td>
                   <td className="border border-border p-4 text-center">Small projects</td>
                   <td className="border border-border p-4 text-center">Medium projects</td>
                   <td className="border border-border p-4 text-center">Large projects</td>
@@ -297,16 +298,20 @@ export default function Fleet() {
 
       {/* CTA Section */}
       <section className="py-12 md:py-20 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
-        <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Need Concrete Delivered?</h2>
-          <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
-            Choose the right truck size for your project and get a quote today. Our flexible fleet is ready to serve you.
-          </p>
-          <a href="/get-quote">
-            <Button size="lg" className="bg-white text-blue-900 hover:bg-blue-50">
-              Get a Quote Now <ChevronRight className="ml-2 w-4 h-4" />
-            </Button>
-          </a>
+        <div className="container">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Need Concrete Delivered?
+            </h2>
+            <p className="text-xl text-blue-100 mb-8">
+              Choose the right truck size for your project and get a quote today. Our flexible fleet is ready to serve you.
+            </p>
+            <a href="/get-quote">
+              <Button size="lg" className="bg-white text-primary hover:bg-blue-50">
+                Get a Quote Now <ChevronRight className="ml-2 w-4 h-4" />
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -315,26 +320,31 @@ export default function Fleet() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h4 className="font-bold mb-4">About HCT</h4>
-              <p className="text-slate-300 text-sm">Premier ready-mix concrete solutions for construction projects across Malaysia.</p>
+              <h4 className="font-bold mb-4">Hyper Concrete Technologies</h4>
+              <p className="text-slate-400 text-sm">
+                Premier ready-mix concrete solutions with flexible fleet options for all project sizes.
+              </p>
             </div>
             <div>
               <h4 className="font-bold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="/" className="text-slate-300 hover:text-white transition-colors">Home</a></li>
-                <li><a href="/catalog" className="text-slate-300 hover:text-white transition-colors">Catalog</a></li>
-                <li><a href="/fleet" className="text-slate-300 hover:text-white transition-colors">Fleet</a></li>
-                <li><a href="/get-quote" className="text-slate-300 hover:text-white transition-colors">Get Quote</a></li>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li><a href="/" className="hover:text-white transition-colors">Home</a></li>
+                <li><a href="/catalog" className="hover:text-white transition-colors">Catalog</a></li>
+                <li><a href="/fleet" className="hover:text-white transition-colors">Fleet</a></li>
+                <li><a href="/get-quote" className="hover:text-white transition-colors">Get Quote</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Contact</h4>
-              <p className="text-slate-300 text-sm">+05-777 2169</p>
-              <p className="text-slate-300 text-sm">admin@hyperconcretetech.com</p>
+              <h4 className="font-bold mb-4">Contact Info</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li>Phone: +05-777 2169</li>
+                <li>Email: admin@hyperconcretetech.com</li>
+                <li>Reg. No: 202001026809</li>
+              </ul>
             </div>
           </div>
           <div className="border-t border-slate-700 pt-8 text-center text-slate-400 text-sm">
-            <p>&copy; 2026 Hyper Concrete Technologies Sdn. Bhd. All rights reserved.</p>
+            <p>&copy; 2024 Hyper Concrete Technologies Sdn. Bhd. All rights reserved.</p>
           </div>
         </div>
       </footer>
