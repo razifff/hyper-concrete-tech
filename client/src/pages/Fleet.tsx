@@ -13,7 +13,7 @@ export default function Fleet() {
       id: 1,
       capacity: "1 Cubic Meter",
       title: "Mini Mixer Truck",
-      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/1000380156_2ebb7bf3.jpg",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/concrete-truck-delivery_2302f9ed.png",
       advantages: [
         "Perfect for tight access roads and narrow construction sites",
         "Ideal for small-scale projects and repairs",
@@ -34,7 +34,7 @@ export default function Fleet() {
       id: 2,
       capacity: "3 Cubic Meters",
       title: "Standard Mixer Truck",
-      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/1000380161_adfe60e6.jpg",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/concrete-truck-delivery_2302f9ed.png",
       advantages: [
         "Most versatile option for medium-sized projects",
         "Balanced capacity for efficiency and flexibility",
@@ -55,7 +55,7 @@ export default function Fleet() {
       id: 3,
       capacity: "6 Cubic Meters",
       title: "Large Capacity Truck",
-      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/grok_image_1773823449173_d97454ae.jpg",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/concrete-truck-delivery_2302f9ed.png",
       advantages: [
         "Maximum capacity for large-scale projects",
         "Ideal for high-volume concrete requirements",

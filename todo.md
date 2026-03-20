@@ -123,6 +123,8 @@
 - [x] Test all pages and functionality - all tests passing (11/11)
 - [x] Verify Fleet page images display correctly on dev server
 - [x] Fix dynamic Tailwind classes preventing image display - changed to static class names
-- [x] All 3 truck images now displaying correctly on Fleet page
+- [x] Replace expired truck image URLs with working concrete-truck-delivery.png
+- [x] Upload concrete-truck-delivery.png to CDN via manus-upload-file
+- [x] All 3 truck images now displaying correctly on Fleet page with valid CDN URLs
 - [x] Rebuild and redeploy to production
 - [x] Confirm all 11 tests passing before deployment
