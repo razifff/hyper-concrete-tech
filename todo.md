@@ -151,3 +151,14 @@
 - [x] Customers can now visualize actual truck size at their construction sites
 - [x] All 11 tests passing
 - [x] Build successful
+
+
+## Truck Dimensions Display
+
+- [x] Add width, length, height specifications for 1m³ truck (1800mm/6'7", 4500mm/14'9", 2700mm/8'10")
+- [x] Add width, length, height specifications for 3m³ truck (2200mm/7'3", 6000mm/19'8", 3200mm/10'6")
+- [x] Add width, length, height specifications for 6m³ truck (2500mm/8'2", 8300mm/27'3", 3800mm/12'5")
+- [x] Update specifications display to show width, length, height in grid format
+- [x] Display dimensions in both metric (mm) and imperial (feet) units
+- [x] All 11 tests passing
+- [x] Build successful

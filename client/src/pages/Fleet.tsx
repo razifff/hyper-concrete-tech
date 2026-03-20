@@ -26,7 +26,9 @@ export default function Fleet() {
       specifications: {
         capacity: "1 m³",
         maxLoad: "2-3 tons",
-        dimensions: "Compact and mobile",
+        width: "1800mm (6'7\")",
+        length: "4500mm (14'9\")",
+        height: "2700mm (8'10\")",
         fuelType: "Diesel",
         idealFor: "Small projects, tight spaces"
       },
@@ -47,7 +49,9 @@ export default function Fleet() {
       specifications: {
         capacity: "3 m³",
         maxLoad: "5-7 tons",
-        dimensions: "Standard truck size",
+        width: "2200mm (7'3\")",
+        length: "6000mm (19'8\")",
+        height: "3200mm (10'6\")",
         fuelType: "Diesel",
         idealFor: "Medium projects, standard sites"
       },
@@ -68,7 +72,9 @@ export default function Fleet() {
       specifications: {
         capacity: "6 m³",
         maxLoad: "10-12 tons",
-        dimensions: "Large commercial truck",
+        width: "2500mm (8'2\")",
+        length: "8300mm (27'3\")",
+        height: "3800mm (12'5\")",
         fuelType: "Diesel",
         idealFor: "Large projects, bulk orders"
       },
@@ -238,8 +244,16 @@ export default function Fleet() {
                         <p className="font-bold text-foreground">{truck.specifications.maxLoad}</p>
                       </div>
                       <div>
-                        <p className="text-muted-foreground">Dimensions</p>
-                        <p className="font-bold text-foreground">{truck.specifications.dimensions}</p>
+                        <p className="text-muted-foreground">Width</p>
+                        <p className="font-bold text-foreground">{truck.specifications.width}</p>
+                      </div>
+                      <div>
+                        <p className="text-muted-foreground">Length</p>
+                        <p className="font-bold text-foreground">{truck.specifications.length}</p>
+                      </div>
+                      <div>
+                        <p className="text-muted-foreground">Height</p>
+                        <p className="font-bold text-foreground">{truck.specifications.height}</p>
                       </div>
                       <div>
                         <p className="text-muted-foreground">Fuel Type</p>
