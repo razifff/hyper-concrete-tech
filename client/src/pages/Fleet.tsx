@@ -34,7 +34,7 @@ export default function Fleet() {
       id: 2,
       capacity: "3 Cubic Meters",
       title: "Standard Mixer Truck",
-      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/zKWsMNHMIcXn_7aafcc9b.jpg",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/1000380161_adfe60e6.jpg",
       advantages: [
         "Most versatile option for medium-sized projects",
         "Balanced capacity for efficiency and flexibility",
@@ -55,7 +55,7 @@ export default function Fleet() {
       id: 3,
       capacity: "6 Cubic Meters",
       title: "Large Capacity Truck",
-      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/vSvClRQFyop7_759106b9.webp",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/grok_image_1773823449173_d97454ae.jpg",
       advantages: [
         "Maximum capacity for large-scale projects",
         "Ideal for high-volume concrete requirements",
