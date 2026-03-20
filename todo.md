@@ -122,5 +122,7 @@
 - [x] Update navigation with Fleet link - added to all pages
 - [x] Test all pages and functionality - all tests passing (11/11)
 - [x] Verify Fleet page images display correctly on dev server
+- [x] Fix dynamic Tailwind classes preventing image display - changed to static class names
+- [x] All 3 truck images now displaying correctly on Fleet page
 - [x] Rebuild and redeploy to production
 - [x] Confirm all 11 tests passing before deployment
