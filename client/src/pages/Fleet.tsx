@@ -13,7 +13,7 @@ export default function Fleet() {
       id: 1,
       capacity: "1 Cubic Meter",
       title: "Mini Mixer Truck",
-      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/6sia3DdKaMcw_eb80a2e3.jpg",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/1000380156_2ebb7bf3.jpg",
       advantages: [
         "Perfect for tight access roads and narrow construction sites",
         "Ideal for small-scale projects and repairs",
