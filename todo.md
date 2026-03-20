@@ -121,3 +121,6 @@
 - [x] Add Fleet section to Catalog page - navigation updated
 - [x] Update navigation with Fleet link - added to all pages
 - [x] Test all pages and functionality - all tests passing (11/11)
+- [x] Verify Fleet page images display correctly on dev server
+- [x] Rebuild and redeploy to production
+- [x] Confirm all 11 tests passing before deployment
