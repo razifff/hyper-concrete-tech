@@ -144,6 +144,9 @@
 - [x] Expand image column to md:col-span-2 (2/3 width) for prominent display
 - [x] Add hover zoom effect (hover:scale-105) for interactivity
 - [x] Increase shadow for better visual prominence
+- [x] Change aspect ratio to 1360x768 (landscape) for full truck view
+- [x] Use object-contain instead of object-cover (no cropping)
+- [x] Add bg-gray-100 background for clean appearance
 - [x] Images now display full-size on both mobile and desktop views
 - [x] Customers can now visualize actual truck size at their construction sites
 - [x] All 11 tests passing

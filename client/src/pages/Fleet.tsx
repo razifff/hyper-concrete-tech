@@ -204,13 +204,13 @@ export default function Fleet() {
           <div className="space-y-16">
             {truckSizes.map((truck, idx) => (
               <div key={truck.id} className={`grid grid-cols-1 md:grid-cols-3 gap-8 items-center ${idx % 2 === 1 ? "md:grid-cols-3 md:[&>*:first-child]:order-2" : ""}`}>
-                {/* Image - Full Size */}
+                {/* Image - Full Size Landscape */}
                 <div className="md:col-span-2">
-                  <div className="relative w-full h-96 md:h-[500px] rounded-lg overflow-hidden shadow-2xl">
+                  <div className="relative w-full rounded-lg overflow-hidden shadow-2xl" style={{aspectRatio: '1360/768'}}>
                     <img 
                       src={truck.image}
                       alt={truck.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-contain bg-gray-100 hover:scale-105 transition-transform duration-300"
                     />
                     <div className={`absolute inset-0 bg-gradient-to-r ${truck.color} opacity-5`}></div>
                   </div>
