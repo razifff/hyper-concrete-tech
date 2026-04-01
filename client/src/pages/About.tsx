@@ -95,15 +95,10 @@ export default function About() {
             <a href="/#services" className="text-base font-medium hover:text-primary transition-colors">Services</a>
             <a href="/#locations" className="text-base font-medium hover:text-primary transition-colors">Locations</a>
           </div>
-          <div className="flex items-center gap-4">
-            <a href="/get-quote" className="hidden md:block">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-blue-600">
-                Get Quote
-              </Button>
-            </a>
+          <div className="flex items-center gap-2 md:gap-4">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors flex-shrink-0"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
@@ -112,6 +107,11 @@ export default function About() {
                 <Menu className="w-6 h-6 text-foreground" />
               )}
             </button>
+            <a href="/get-quote" className="flex-shrink-0">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-blue-600">
+                Get Quote
+              </Button>
+            </a>
           </div>
         </div>
         {/* Mobile Menu */}
