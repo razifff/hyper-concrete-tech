@@ -105,10 +105,10 @@ export default function Home() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-10">
             <a href="/about" className="text-base font-medium hover:text-primary transition-colors">About</a>
+            <a href="/services" className="text-base font-medium hover:text-primary transition-colors">Services</a>
             <a href="/catalog" className="text-base font-medium hover:text-primary transition-colors">Catalog</a>
-            <a href="#services" className="text-base font-medium hover:text-primary transition-colors">Services</a>
+            <a href="/fleet" className="text-base font-medium hover:text-primary transition-colors">Fleet</a>
             <a href="#locations" className="text-base font-medium hover:text-primary transition-colors">Locations</a>
-            <a href="#contact" className="text-base font-medium hover:text-primary transition-colors">Contact</a>
           </div>
           
           {/* Mobile Menu Button */}
@@ -132,10 +132,10 @@ export default function Home() {
           <div className="md:hidden bg-white border-t border-border">
             <div className="container py-4 space-y-3">
               <a href="/about" className="block text-base font-medium hover:text-primary transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>About</a>
+              <a href="/services" className="block text-base font-medium hover:text-primary transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>Services</a>
               <a href="/catalog" className="block text-base font-medium hover:text-primary transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>Catalog</a>
-              <a href="#services" className="block text-base font-medium hover:text-primary transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>Services</a>
+              <a href="/fleet" className="block text-base font-medium hover:text-primary transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>Fleet</a>
               <a href="#locations" className="block text-base font-medium hover:text-primary transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>Locations</a>
-              <a href="#contact" className="block text-base font-medium hover:text-primary transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>Contact</a>
               <a href="/get-quote" className="block sm:hidden">
                 <Button className="w-full bg-primary text-primary-foreground hover:bg-blue-600">
                   Get Quote

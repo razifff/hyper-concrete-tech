@@ -9,6 +9,7 @@ import GetQuote from "./pages/GetQuote";
 import Catalog from "./pages/Catalog";
 import About from "./pages/About";
 import Fleet from "./pages/Fleet";
+import Services from "./pages/Services";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -16,6 +17,7 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/about"} component={About} />
+      <Route path={"/services"} component={Services} />
       <Route path={"/catalog"} component={Catalog} />
       <Route path={"/fleet"} component={Fleet} />
       <Route path={"/get-quote"} component={GetQuote} />
