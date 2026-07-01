@@ -196,9 +196,10 @@
 ## Video Autoplay Feature
 
 - [x] Add autoPlay attribute to video element in About section
-- [x] Add muted attribute for browser compatibility
 - [x] Add loop attribute for continuous playback
 - [x] Keep controls for user interaction
+- [x] Remove muted attribute to allow audio playback
+- [x] Pelanggan dapat dengar informasi dalam video sambil membaca profile
 - [x] Test video autoplay on dev server
 - [x] All 11 tests passing
 - [x] Build successful
