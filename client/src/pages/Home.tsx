@@ -2,7 +2,7 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ChevronRight, Truck, Zap, Shield, Award, MapPin, Phone, Mail, CheckCircle, Building2, Users, Briefcase, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { MapView } from "@/components/Map";
 
 /**
@@ -18,6 +18,16 @@ export default function Home() {
   let { user, loading, error, isAuthenticated, logout } = useAuth();
   const [activeService, setActiveService] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.play().catch(() => {
+        // Autoplay with sound failed on some browsers, will play on user interaction
+      });
+    }
+  }, []);
 
   const services = [
     {
@@ -284,10 +294,12 @@ export default function Home() {
           <div className="mb-12">
             <div className="relative w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-xl" style={{aspectRatio: '16/9'}}>
               <video 
+                ref={videoRef}
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663388603059/DZbEmEKMRkcTG2RVHbRh5e/AQMiVEQkyF29xc7kH0aOsVAQe-FPVl15E0ix4DvSyUor-f0J89Gwp8IlC1i3NLPdBduRM1WCjkxOLpLxTHKjyeVr_852d86f6.mp4"
                 autoPlay
                 loop
                 controls
+                playsInline
                 className="w-full h-full object-cover"
               />
             </div>
