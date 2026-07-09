@@ -1,8 +1,9 @@
-import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ChevronRight, Package, Zap, Shield, TrendingUp, Menu, X, ArrowRight } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from "@/_core/hooks/useAuth";
+import ConcreteCalculator from "@/components/ConcreteCalculator";
 
 /**
  * Catalog/Products Page
@@ -337,6 +338,13 @@ export default function Catalog() {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Concrete Calculator Section */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container">
+          <ConcreteCalculator />
         </div>
       </section>
 
