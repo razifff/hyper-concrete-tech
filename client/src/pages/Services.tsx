@@ -96,10 +96,10 @@ export default function Services() {
           </div>
           <div className="hidden md:flex items-center gap-10">
             <a href="/" className="text-base font-medium hover:text-primary transition-colors">Home</a>
-            <a href="/about" className="text-base font-medium hover:text-primary transition-colors">About</a>
+            <a href="/services" className="text-base font-medium text-primary transition-colors font-bold">Services</a>
             <a href="/catalog" className="text-base font-medium hover:text-primary transition-colors">Catalog</a>
             <a href="/fleet" className="text-base font-medium hover:text-primary transition-colors">Fleet</a>
-            <a href="/#locations" className="text-base font-medium hover:text-primary transition-colors">Locations</a>
+            <a href="/about" className="text-base font-medium hover:text-primary transition-colors">About</a>
           </div>
           <div className="flex items-center gap-2 md:gap-4">
             <button
@@ -132,11 +132,11 @@ export default function Services() {
                 Home
               </a>
               <a
-                href="/about"
-                className="block px-4 py-2 text-base font-medium hover:bg-gray-100 rounded-lg transition-colors"
+                href="/services"
+                className="block px-4 py-2 text-base font-medium text-primary hover:bg-gray-100 rounded-lg transition-colors font-bold"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                About
+                Services
               </a>
               <a
                 href="/catalog"
@@ -153,11 +153,11 @@ export default function Services() {
                 Fleet
               </a>
               <a
-                href="/#locations"
+                href="/about"
                 className="block px-4 py-2 text-base font-medium hover:bg-gray-100 rounded-lg transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Locations
+                About
               </a>
               <a href="/get-quote" className="block">
                 <Button className="w-full bg-primary text-primary-foreground hover:bg-blue-600">
